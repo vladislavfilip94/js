@@ -2,7 +2,6 @@
 // import { addToCart, totalPrice as price, tq } from './shoppingCart.js';
 // addToCart('bread', 1);
 // console.log(price, tq);
-/*
 console.log(`Importing module`);
 // import * as ShoppingCart from './shoppingCart.js';
 // console.log(ShoppingCart.addToCart('apple', 5));
@@ -11,6 +10,7 @@ console.log(`Importing module`);
 import add from './shoppingCart.js';
 
 add('pizza', 2);
+/*
 
 // console.log(`Start fetching`);
 // const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
@@ -20,7 +20,7 @@ add('pizza', 2);
 
 const getLastPost = async function () {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
-
+  
   const data = await res.json();
   return { title: data.at(-1).title, text: data.at(-1).body };
 };
@@ -59,7 +59,10 @@ export.addToCart = function (product, quantity) {
 // Inport 
 cons { addToCart} =requestAnimationFrame('./shopingCart.js')
 */
-import { cloneDeep } from './../node_modules/lodash-es/cloneDeep.js';
+// import { cloneDeep } from './../node_modules/lodash-es/cloneDeep.js';
+// import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+// import cloneDeep from './../../node_modules/lodash-es/cloneDeep.js';
+import cloneDeep from 'lodash-es';
 const state = {
   cart: [
     { product: 'bread', quantity: 5 },
@@ -67,3 +70,26 @@ const state = {
   ],
   user: { logeedIn: true },
 };
+const stateClone = Object.assign({}, state);
+const stateDeepClone = cloneDeep(state);
+
+state.user.logeedIn = false;
+console.log(stateClone);
+console.log(stateDeepClone);
+if (module.hot) {
+  module.hot.accept();
+}
+class Person {
+  greeting = 'Hey';
+  constructor(name) {
+    this.name = name;
+    console.log(`${this.greeting}, ${this.name}`);
+  }
+}
+const jonas = new Person('Vlad');
+console.log('vlad' ?? null);
+// console.log(cart.find(el => el.quantity >= 2));
+Promise.resolve('Test').then(res => console.log(res));
+import 'core-js/stable';
+// npx run parcel index.html
+import 'regenerator-runtime/runtime';
