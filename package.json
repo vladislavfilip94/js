@@ -1,5 +1,27 @@
 {
   "devDependencies": {
     "prettier": "2.8.0"
+  },
+  "name": "js",
+  "description": "This branch of the repo contains starter files and final code for all sections and projects of the course, **exactly as shown in the videos**.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladislavfilip94/js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vladislavfilip94/js/issues"
+  },
+  "homepage": "https://github.com/vladislavfilip94/js#readme",
+  "dependencies": {
+    "leaflet": "^1.9.3",
+    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21"
   }
 }
